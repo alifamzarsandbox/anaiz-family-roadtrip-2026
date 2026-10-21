@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sage: #A8BFA3;
+  --color-forest: #496B55;
+  --color-cream: #FAF6EB;
+  --color-beige: #E8D9C5;
+  --color-sky: #C9DFE8;
+  --color-olive: #8B9C75;
+  --color-gold: #EBCB8B;
+  --color-terracotta: #D89C7B;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-story: 'Playfair Display', Georgia, serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: #354e3e;
+  background: var(--color-cream);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+button { font: inherit; }
+svg { flex-shrink: 0; }
+::selection { background: var(--color-beige); }
+:focus-visible { outline: 2px solid var(--color-forest); outline-offset: 6px; }
+.app-shell {
+  width: min(100%, 1600px);
+  min-height: 100svh;
+  min-height: 100dvh;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(22px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+}
+.skip-link { position: absolute; top: 10px; left: 16px; transform: translateY(-180%); background: var(--color-cream); padding: 12px; z-index: 50; }
+.skip-link:focus { transform: translateY(0); }
+.site-header { padding-bottom: 20px; }
+.wordmark { font-family: var(--font-story); font-size: 36px; line-height: 1; text-decoration: none; letter-spacing: -2px; }
+.wordmark-dot { color: #a46345; }
+.wordmark-caption { display: block; margin-top: 9px; font: 500 8px var(--font-sans); letter-spacing: 2px; }
+.edition { font-size: 10px; letter-spacing: 1.7px; }
+main { flex: 1; min-width: 0; }
+.opening-shell { padding: 58px 0 62px; text-align: center; }
+.eyebrow { margin: 0 0 30px; color: #66735b; font-size: 9px; font-weight: 600; letter-spacing: 2.4px; }
+.family-name { margin: 0 0 14px; font-size: 11px; font-weight: 600; letter-spacing: 4px; }
+h1 { margin: 0; font-family: var(--font-story); font-weight: 500; font-size: clamp(58px, 11vw, 112px); line-height: 1.03; letter-spacing: -3px; }
+.year { display: block; color: var(--color-forest); }
+.title-period { color: #a46345; }
+.storyline { margin: 27px 0 26px; font-family: var(--font-story); font-size: clamp(19px, 3vw, 24px); line-height: 1.5; }
+.trip-details { font-size: 10px; letter-spacing: .5px; }
+.trip-details p { margin: 0; }
+.route-note { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 28px auto 0; padding-top: 24px; border-top: 1px solid #d4d8c7; max-width: 430px; }
+.route-note p { margin: 0; font-size: 11px; line-height: 1.8; }
+.foundation-note { margin: 26px 0 0; color: #64705c; font-size: 10px; line-height: 1.8; }
+.illustration-preview { max-width: 1060px; margin: 36px auto 0; }
+.illustration-preview figure { margin: 0; min-width: 0; }
+.illustration-stage { position: relative; height: clamp(310px, 48vw, 530px); overflow: hidden; border-radius: 48% 48% 12px 12px / 25% 25% 12px 12px; background: var(--color-sky); isolation: isolate; }
+.landscape-svg { display: block; width: 100%; height: 100%; }
+.family-car { position: absolute; width: clamp(210px, 36%, 360px); height: auto; bottom: 5.5%; left: 50%; transform: translateX(-50%); }
+.postcard-caption { position: absolute; left: 0; right: 0; bottom: 10px; font-family: var(--font-story); font-style: italic; color: #354e3e; font-size: clamp(11px, 1.5vw, 16px); }
+.illustration-preview figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; padding-top: 12px; font-size: 8px; line-height: 1.6; letter-spacing: 1.2px; color: #52654e; text-align: left; }
+.landscape-studies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 3vw, 28px); margin-top: 30px; }
+.study-stage { height: clamp(130px, 25vw, 260px); overflow: hidden; border-radius: 8px; }
+.art-preview-note { margin: 26px 0 0; font-size: 10px; line-height: 1.8; color: #64705c; }
+.journey-track { position: relative; height: 650svh; }
+.journey-stage { position: sticky; top: 0; height: 100svh; overflow: clip; isolation: isolate; background: var(--color-sky); }
+.journey-scenery { position: absolute; inset: 0; width: 100%; height: 100%; }
+.journey-car { position: absolute; width: clamp(210px, 30vw, 330px); height: auto; bottom: 21%; left: 50%; transform: translateX(-50%); }
+.journey-intro { position: absolute; top: max(24px, env(safe-area-inset-top)); left: 20px; right: 20px; padding-top: 4svh; text-align: center; }
+.journey-intro .eyebrow { margin-bottom: 14px; }
+.journey-instruction { margin: 0; font: 500 clamp(20px, 3vw, 30px)/1.4 var(--font-story); }
+.journey-hint { margin-top: 12px; font-size: 11px; line-height: 1.6; }
+.story-sky-veil { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, #faf6ebe6 0%, #faf6ebc2 23%, #faf6eb00 57%); }
+.story-scenes { position: absolute; inset: 0; pointer-events: none; }
+.story-panel { position: absolute; top: max(20px, env(safe-area-inset-top)); left: 16px; right: 16px; margin: 0 auto; max-width: 700px; padding-top: 2svh; text-align: center; pointer-events: auto; }
+.scene-eyebrow { margin: 0 0 16px; color: #52654e; font-size: 10px; font-weight: 600; letter-spacing: 2px; line-height: 1.6; }
+.hero-title { font-size: inherit; letter-spacing: 0; line-height: 1; }
+.hero-family { display: block; margin: 0 0 12px; font: 600 12px/1.4 var(--font-sans); letter-spacing: 4px; }
+.hero-road { display: block; font-size: clamp(31px, min(6.5vw, 7svh), 64px); font-weight: 500; letter-spacing: -1.2px; line-height: 1.02; }
+.hero-road > span { display: block; font-size: 1.25em; font-style: italic; }
+.scene-date { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 18px 0 0; font-size: 11px; font-weight: 500; letter-spacing: 1px; }
+.scene-duration { margin: 7px 0 0; font-size: 10px; }
+.hero-route { display: flex; align-items: center; justify-content: center; gap: 5px; margin: 17px 0 0; font-size: 10px; line-height: 1.7; }
+.hero-slogan { margin: 17px 0 0; font: 500 clamp(17px, 2.6vw, 23px)/1.4 var(--font-story); }
+.scene-scroll-cue { margin: 19px 0 0; font-size: 10px; line-height: 1.7; color: #52654e; }
+.scene-scroll-cue span { display: inline-block; margin-left: 5px; }
+.scene-title { margin: 0; font: 500 clamp(28px, min(6vw, 6.5svh), 56px)/1.13 var(--font-story); letter-spacing: -.8px; }
+.scene-title em { font-weight: 500; }
+.scene-leaf { display: inline-block; vertical-align: middle; font-size: .55em; }
+.narrative-title { text-transform: none; }
+.scene-body { max-width: 470px; margin: 22px auto 0; font: 500 clamp(18px, 2.5vw, 24px)/1.45 var(--font-story); text-wrap: pretty; }
+.scene-support { max-width: 360px; margin: 14px auto 0; font-size: 13px; line-height: 1.75; text-wrap: pretty; }
+.scene-footnote { margin: 17px auto 0; font-size: 12px; line-height: 1.7; }
+.location-milestone { display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 9px; letter-spacing: 1.5px; }
+.arrival-title { font-size: clamp(27px, min(6vw, 6svh), 52px); }
+.arrival-family { margin: 16px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 1.6px; }
+.arrival-date { margin: 8px 0 0; font-size: 10px; letter-spacing: 1px; }
+.arrival-slogan { margin: 18px auto 0; font: 500 clamp(19px, 2.5vw, 27px)/1.35 var(--font-story); }
+.arrival-quote { max-width: 440px; margin: 16px auto 0; font-size: 12px; line-height: 1.7; text-wrap: pretty; }
+.journey-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; max-width: 100%; padding: 11px 18px; margin-top: 18px; border: 1px solid var(--color-forest); border-radius: 100px; background: var(--color-forest); color: var(--color-cream); font-size: 12px; font-weight: 500; line-height: 1.5; cursor: pointer; transition: background-color .18s ease, color .18s ease; }
+.journey-button:hover { background: #354e3e; }
+.journey-button-secondary { background: var(--color-cream); color: #354e3e; }
+.journey-button-secondary:hover { background: var(--color-beige); }
+.departure-countdown { position: absolute; bottom: max(78px, calc(env(safe-area-inset-bottom) + 66px)); left: 12px; right: 12px; pointer-events: none; text-align: center; color: #1b2b20; }
+.countdown-digits { display: flex; justify-content: center; margin: 0; gap: 20px; }
+.countdown-digits > div { display: flex; flex-direction: column; min-width: 32px; }
+.countdown-digits dt { order: 1; font-size: 9px; line-height: 1.4; }
+.countdown-digits dd { margin: 0; font-size: 21px; font-weight: 500; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.departure-day { margin: 0; font-size: 12px; font-weight: 600; line-height: 1.6; letter-spacing: 1px; }
+.journey-progress { position: absolute; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); max-width: 460px; margin-inline: auto; padding: 6px 12px; background: var(--color-cream); border-radius: 9px; }
+.journey-progress ol { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.journey-progress button { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; width: 100%; min-height: 44px; padding: 3px 0; border: 0; background: transparent; color: #52654e; font-size: 9px; line-height: 1.5; cursor: pointer; }
+.journey-progress button[aria-current="step"] { color: #354e3e; font-weight: 600; }
+.milestone-dot { width: 7px; height: 7px; border-radius: 50%; border: 1px solid var(--color-forest); background: var(--color-cream); }
+[aria-current="step"] .milestone-dot { background: var(--color-forest); box-shadow: 0 0 0 3px #a8bfa34d; }
+.progress-rail { position: absolute; top: 18px; left: calc(12px + (100% - 24px) / 6); right: calc(12px + (100% - 24px) / 6); height: 1px; background: #c9cdbb; }
+.progress-rail > div { width: 100%; height: 100%; background: var(--color-forest); transform-origin: left center; }
+.arrival-effects { position: absolute; inset: 0; pointer-events: none; overflow: clip; }
+.arrival-piece { position: absolute; display: block; }
+.arrival-leaf { width: 17px; height: 17px; color: var(--color-forest); }
+.arrival-leaf svg { width: 100%; height: 100%; }
+.arrival-spark { width: 4px; height: 4px; border-radius: 50%; background: #FAF6EB; }
+@media (max-height: 650px) {
+  .journey-button { margin-top: 10px; padding-inline: 14px; font-size: 11px; }
+  .story-panel { top: max(12px, env(safe-area-inset-top)); padding-top: 0; }
+  .scene-eyebrow { margin-bottom: 9px; font-size: 9px; }
+  .hero-family { margin-bottom: 6px; font-size: 10px; }
+  .hero-road { font-size: 30px; }
+  .scene-date { margin-top: 10px; font-size: 10px; }
+  .hero-route, .hero-slogan, .scene-scroll-cue { margin-top: 10px; }
+  .scene-body { margin-top: 13px; font-size: 18px; }
+  .scene-support, .scene-footnote { margin-top: 10px; font-size: 12px; }
+  .arrival-family { margin-top: 10px; font-size: 10px; }
+  .arrival-slogan { margin-top: 12px; font-size: 18px; }
+  .arrival-quote { margin-top: 10px; font-size: 11px; }
+}
+@media (max-height: 500px) and (min-width: 600px) {
+  .departure-countdown { left: 50%; bottom: auto; top: max(24px, env(safe-area-inset-top)); }
+  .story-panel { left: 24px; right: auto; width: 45%; max-width: 420px; }
+  .journey-car { left: 74%; }
+  .hero-road > span { display: inline; margin-left: .2em; font-size: 1em; }
+  .hero-slogan { font-size: 16px; }
+  .scene-title { font-size: 27px; }
+  .arrival-title { font-size: 26px; }
+  .arrival-quote { max-width: 360px; }
+}
+@media (max-height: 500px) {
+  .journey-car { width: 170px; }
+  .journey-intro { padding-top: 0; top: max(12px, env(safe-area-inset-top)); }
+  .journey-intro .eyebrow { margin-bottom: 6px; }
+  .journey-hint { margin-top: 5px; }
+}
+.site-footer { border-top: 1px solid #d4d8c7; padding-top: 20px; color: #64705c; font-size: 8px; letter-spacing: 1px; }
+@media (min-width: 768px) {
+  .hero-road > span { display: inline; margin-left: .2em; font-size: 1em; }
+  .app-shell { padding: max(36px, env(safe-area-inset-top)) max(56px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(56px, env(safe-area-inset-left)); }
+  .opening-shell { padding-block: 40px 60px; }
+  .eyebrow { font-size: 10px; }
+  .mobile-break { display: none; }
+  .site-footer { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .journey-button { transition: none; }
+  .arrival-effects { display: none; }
+}
